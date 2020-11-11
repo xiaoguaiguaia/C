@@ -16,3 +16,20 @@ int main()
     printf("len = %d\n",len);
     return 0;
 }
+
+//不用临时变量计算字符串长度（递归）
+#include <stdio.h>
+int my_strlen(char* str)
+{
+    if(*str != '\0')
+        return 1+my_strlen(str+1);
+    else
+        return 0;
+}
+int main()
+{
+    char arr[] = "cpp";
+    int len = my_strlen(arr);
+    printf("len = %d\n",len);
+    return 0;
+}
